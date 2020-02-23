@@ -61,5 +61,110 @@ namespace HiLoCardGame.CoreTest
             Assert.AreNotSame(firstCard, secondCard);
         }
 
+        [TestMethod]
+        public void A_Game_Compare_If_Next_Card_Is_High()
+        {
+            GameSettings setting = new GameSettings();
+
+            var newPlayer = new Game(setting);
+            newPlayer.BeginGame();
+
+            newPlayer.NextCard();
+            
+            bool Continue = true;
+            while (Continue)
+            {
+                if (newPlayer.NextCard(1))
+                {
+                    Continue = false;
+                }
+            }
+
+            Assert.IsTrue(newPlayer.PlayerScore == 1);
+        }
+
+        [TestMethod]
+        public void A_Game_Compare_If_Next_Card_Is_Lower()
+        {
+            GameSettings setting = new GameSettings();
+
+            var newPlayer = new Game(setting);
+            newPlayer.BeginGame();
+
+            newPlayer.NextCard();
+
+            bool Continue = true;
+            while (Continue)
+            {
+                if (newPlayer.NextCard(-1))
+                {
+                    Continue = false;
+                }
+            }
+
+            Assert.IsTrue(newPlayer.PlayerScore == 1);
+        }
+
+        [TestMethod]
+        public void A_Game_Player_Guess_If_All_Next_Cards_Are_Higher()
+        {
+            GameSettings setting = new GameSettings();
+
+            var newPlayer = new Game(setting);
+            newPlayer.BeginGame();
+
+            newPlayer.NextCard();
+
+            int count = 0;
+            bool Continue = true;
+            while (Continue)
+            {
+                count++;
+                Continue = newPlayer.NextCard(1);
+            }
+
+            if (newPlayer.PlayerScore == count)
+            {
+                string msg = $"Congratulations! All the cards were guessed, you score was { newPlayer.PlayerScore.ToString() }";
+                Assert.AreEqual(newPlayer.ShowFinalResult().Trim(), msg.Trim());
+            }
+            else
+            {
+                string msg = $"Game Over! You lost, you score was { newPlayer.PlayerScore.ToString() }";
+                Assert.AreEqual(newPlayer.ShowFinalResult().Trim(), msg.Trim());
+            }
+            
+        }
+
+        [TestMethod]
+        public void A_Game_Player_Guess_If_All_Next_Cards_Are_Lower()
+        {
+            GameSettings setting = new GameSettings();
+
+            var newPlayer = new Game(setting);
+            newPlayer.BeginGame();
+
+            newPlayer.NextCard();
+
+            int count = 0;
+            bool Continue = true;
+            while (Continue)
+            {
+                count++;
+                Continue = newPlayer.NextCard(-1);
+            }
+
+            if (newPlayer.PlayerScore == count)
+            {
+                string msg = $"Congratulations! All the cards were guessed, you score was { newPlayer.PlayerScore.ToString() }";
+                Assert.AreEqual(newPlayer.ShowFinalResult().Trim(), msg.Trim());
+            }
+            else
+            {
+                string msg = $"Game Over! You lost, you score was { newPlayer.PlayerScore.ToString() }";
+                Assert.AreEqual(newPlayer.ShowFinalResult().Trim(), msg.Trim());
+            }
+
+        }
     }
 }
