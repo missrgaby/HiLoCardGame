@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiLoCardGame.Core", "HiLoCa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiLoCardGame.CoreTest", "HiLoCardGame.CoreTest\HiLoCardGame.CoreTest.csproj", "{AC7309DE-5D5A-458D-94FA-C6FB5F16FDD9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiLoCardGame.UI", "HiLoCardGame.UI\HiLoCardGame.UI.csproj", "{638DA6BD-D13F-42E4-A9DD-BB91A709F4C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AC7309DE-5D5A-458D-94FA-C6FB5F16FDD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC7309DE-5D5A-458D-94FA-C6FB5F16FDD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC7309DE-5D5A-458D-94FA-C6FB5F16FDD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{638DA6BD-D13F-42E4-A9DD-BB91A709F4C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{638DA6BD-D13F-42E4-A9DD-BB91A709F4C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{638DA6BD-D13F-42E4-A9DD-BB91A709F4C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{638DA6BD-D13F-42E4-A9DD-BB91A709F4C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

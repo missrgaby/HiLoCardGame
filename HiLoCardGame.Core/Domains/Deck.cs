@@ -48,9 +48,10 @@ namespace HiLoCardGame.Core
 
         public void RemoveCardFromDeck(List<ICard> cards)
         {
-            foreach (ICard card in cards)
+            foreach (var card in cards)
             {
-                DeckOfCards.Remove(card);
+                ICard removeCard = DeckOfCards.Where(x=> x.Rank == card.Rank && x.Suit == card.Suit).FirstOrDefault();
+                DeckOfCards.Remove(removeCard);
             }
         }
     }

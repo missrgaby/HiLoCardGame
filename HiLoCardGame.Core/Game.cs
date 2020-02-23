@@ -26,6 +26,10 @@ namespace HiLoCardGame.Core
         /// </summary>
         public void BeginGame()
         {
+            FaceUpCard = null;
+            PlayerScore = 0;
+            SetOfDecks = new List<ICard>();
+
             for (int i = 0; i < Settings.NumberOfDecks; i++)
             {
                 Deck deck = new Deck();
@@ -73,11 +77,11 @@ namespace HiLoCardGame.Core
 
             if (SetOfDecks.Count == 0)
             {
-                message = $"Congratulations! All the cards were guessed, you score was { PlayerScore.ToString() }";
+                message = $"Congratulations! All the cards were guessed, your final score was { PlayerScore.ToString() }";
             }
             else
             {
-                message = $"Game Over! You lost, you score was { PlayerScore.ToString() }";
+                message = $"Game Over! You lost, the last card was { ShowFaceUpCard() } and your final score was { PlayerScore.ToString() }";
             }
 
             return message;
