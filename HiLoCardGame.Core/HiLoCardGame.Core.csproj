@@ -44,12 +44,16 @@
     <Compile Include="Domains\ClubsCard.cs" />
     <Compile Include="Domains\Deck.cs" />
     <Compile Include="Domains\DiamondsCard.cs" />
+    <Compile Include="Domains\GameSettings.cs" />
     <Compile Include="Domains\HeartsCard.cs" />
     <Compile Include="Domains\ICard.cs" />
     <Compile Include="Domains\SpadesCard.cs" />
     <Compile Include="Enums\Ranks.cs" />
     <Compile Include="Enums\Suits.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\SetOfDeckService.cs" />
+    <Compile Include="Services\ISetOfDeckService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
